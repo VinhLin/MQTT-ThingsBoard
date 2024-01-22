@@ -14,7 +14,7 @@ Raspberry	|	Sensor DHT22	|
 GND		|	GND		|
 GPIO 4		|	Data		|
 
-- [!Picture Connection]()
+- ![DHT22_Connect_RPi](https://github.com/VinhLin/MQTT-ThingsBoard/blob/main/Image/DHT22_Connect_RPi.png)
 
 ---------------------------------------------------------------------------
 ## Install software and read data
@@ -53,15 +53,21 @@ cd example
 nano dht_simpletest.py
 ```
 - Change content `dhtDevice = adafruit_dht.DHT22(board.D18)` to `dhtDevice = adafruit_dht.DHT22(board.D4)`
+- ![Picture_1](https://github.com/VinhLin/MQTT-ThingsBoard/blob/main/Image/Picture_1.png)
 - Run:
 ```
 python3 dht_simpletest.py
 ```
+- ![Result - Picture 2](https://github.com/VinhLin/MQTT-ThingsBoard/blob/main/Image/Picture_2.png)
 
 -------------------------------------------------------------------------------
 ## ThingsBoard
+```
+THINGSBOARD_HOST = 'demo.thingsboard.io'
+THINGSBOARD_HOST = 'thingsboard.cloud'
+```
 
-## Send Data to ThingsBoard
+### Send Data to ThingsBoard
 ```
 cd Adafruit_CircuitPython_DHT
 mkdir thingsboard-dht22
@@ -125,7 +131,6 @@ except KeyboardInterrupt:
 
 client.loop_stop()
 client.disconnect()
-
 ```
 
 
